@@ -1,3 +1,5 @@
 1.Solution
 2.addTwoNumbers
 3.lengthOfLongestSubstring
+4.FindMedianSortedArrays
+5.LongestPalindrome
