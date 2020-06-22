@@ -1,15 +1,17 @@
 package com.lmx.apiserver.controller;
 
 import com.lmx.apiserver.utils.Result;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author: lmx
  * @create: 2020/4/29
  **/
 @RestController
+@Slf4j
 public class HelloController {
 
     @GetMapping("/hello")
@@ -27,6 +29,12 @@ public class HelloController {
             e.printStackTrace();
         }
         return new Result(200,"成功");
+    }
+
+    @PostMapping("/listPost")
+    public Result listPost(@RequestBody List<Object> list){
+        log.info("message:{}",list);
+        return new Result(200,"sucess");
     }
 
 }
