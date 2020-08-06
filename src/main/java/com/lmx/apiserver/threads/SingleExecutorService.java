@@ -14,7 +14,7 @@ public class SingleExecutorService {
     private volatile static SingleExecutorService instance;
 
     private final ExecutorService workerServer = Executors.newFixedThreadPool(
-            100,
+            10,
             new ThreadFactoryBuilder()
                     .setDaemon(true)
                     .setNameFormat("worker")
