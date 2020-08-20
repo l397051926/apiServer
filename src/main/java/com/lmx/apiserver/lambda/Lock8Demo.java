@@ -18,9 +18,7 @@ public class Lock8Demo {
             }
         },"A").start();
         Thread.sleep(300);
-        new Thread(()->{
-            phone.sendXml();
-        },"B").start();
+        new Thread(()-> Phone.sendXml(),"B").start();
     }
 
 
