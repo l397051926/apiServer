@@ -27,6 +27,7 @@ public class CombinationSum2 {
                 if (isChongfu(tmp,result)){
                     result.add(tmp);
                 }
+                return;
             } else if (candidates[i] < target) {
                 tmp.add(candidates[i]);
                 tmp(candidates, target - candidates[i], i +1 , tmp, result);
