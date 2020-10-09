@@ -4,6 +4,7 @@ import com.lmx.apiserver.utils.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -36,5 +37,12 @@ public class HelloController {
         log.info("message:{}",list);
         return new Result(200,"sucess");
     }
+
+    @PostMapping("/postTest")
+    public Result postTest(@RequestBody Object list, HttpServletRequest request){
+        log.info("message:{}",list);
+        return new Result(200,"sucess");
+    }
+
 
 }
