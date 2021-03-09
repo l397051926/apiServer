@@ -1,5 +1,7 @@
 package com.lmx.dao.model.generator;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -27,16 +29,21 @@ public class MysqlGenerator {
         mpg.setGlobalConfig(gc);
 
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://172.21.1.232:3306/demo?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://172.21.1.232:3306/analytics_tmp?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
+//        dsc.setUrl("jdbc:clickhouse://172.21.1.116:8123/eip_analytics");
+//        dsc.setDriverName("ru.yandex.clickhouse.ClickHouseDriver");
+//        dsc.setUsername("default");
+//        dsc.setPassword("123456");
+
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("model"); // 模块名称, 这里可以根据不同模块来写
-        pc.setParent("com.lmx.dao.model"); // 父包名
+//        pc.setModuleName("model"); // 模块名称, 这里可以根据不同模块来写
+        pc.setParent("com.mlamp.dashboard.dao"); // 父包名
         mpg.setPackageInfo(pc);
 
 
